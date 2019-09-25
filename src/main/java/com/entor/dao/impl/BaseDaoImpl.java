@@ -51,4 +51,9 @@ public class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T>{
 		return getSqlSession().selectOne(cls.getSimpleName()+".getTotals");
 	}
 
+	@Override
+	public List<T> queryAll(Class<?> cls) {
+		return getSqlSession().selectList(cls.getSimpleName()+".queryAll");
+	}
+
 }

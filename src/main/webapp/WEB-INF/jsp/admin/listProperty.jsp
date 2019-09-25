@@ -1,6 +1,3 @@
-<!-- 模仿天猫整站ssm 教程 为how2j.cn 版权所有-->
-<!-- 本教程仅用于学习使用，切勿用于非法用途，由此引起一切后果与本站无关-->
-<!-- 供购买者学习，请勿私自传播，否则自行承担相关法律责任-->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8" import="java.util.*"%>
@@ -50,20 +47,12 @@
 				<tr>
 					<td>${p.id}</td>
 					<td>${p.name}</td>
-					<td><a href="admin_property_edit?id=${p.id}&cid=${c.id}"><span
-							class="glyphicon glyphicon-edit"></span></a></td>
-					<td><a deleteLink="true"
-						   href="admin_property_delete?id=${p.id}"><span
-							class=" 	glyphicon glyphicon-trash"></span></a></td>
-
+					<td><a href="${pageContext.request.contextPath}/admin_property_edit?id=${p.id}&cid=${c.id}"><span class="glyphicon glyphicon-edit"></span></a></td>
+					<td><a href="javascript:void(0);" onclick="deleteByIds(${c.id},${p.id});"><span class="glyphicon glyphicon-trash"></span></a></td>
 				</tr>
 			</c:forEach>
 			</tbody>
 		</table>
-	</div>
-
-	<div class="pageDiv">
-		<%@include file="../include/admin/adminPage.jsp"%>
 	</div>
 
 	<div class="panel panel-warning addDiv">

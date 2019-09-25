@@ -17,6 +17,10 @@
 	<select id="queryById" resultType="Category">
 		select * from Category where id = #{id}
 	</select>
+	<!-- 查找操作 -->
+	<select id="queryByPid" resultType="Category">
+		select c.* from category c,product p where c.id = p.cid and p.id=#{id}
+	</select>
 	<!-- 更新操作  -->
 	<update id="update" parameterType="Category">
 		update Category 
@@ -32,6 +36,7 @@
 	<select id="queryByPage" parameterType="map" resultType="Category">
 		select * from category order by id limit #{start},#{pageSize}
 	</select>
+	
 	<!-- 查询总记录数  -->
 	<select id="getTotals" resultType="int">
 		select count(*) from category

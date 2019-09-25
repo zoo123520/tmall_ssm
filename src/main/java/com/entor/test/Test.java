@@ -1,24 +1,27 @@
 package com.entor.test;
 
 
+
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.entor.entity.Category;
-import com.entor.entity.Property;
-import com.entor.entity.User;
+import com.entor.entity.Product;
 import com.entor.service.CategoryService;
-import com.entor.service.PropertyService;
-import com.entor.service.UserService;
+import com.entor.service.OrderService;
+import com.entor.service.ProductService;
+import com.entor.service.PropertyValueService;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		PropertyService service = (PropertyService)context.getBean("propertyService");
-		
-		System.out.println(service.queryById(Property.class, 244));
+//		ProductService pservice = (ProductService)context.getBean("productService");
+//		CategoryService cservice = (CategoryService)context.getBean("categoryService");
+		OrderService oservice = (OrderService)context.getBean("orderService");
+		System.out.println(oservice.queryOrderVOByPage());
 		/*
 		List<User> list = service.queryByPage(User.class, 1, 20);
 		for(User user:list) {

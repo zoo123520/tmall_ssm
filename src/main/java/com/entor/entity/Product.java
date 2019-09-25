@@ -5,12 +5,19 @@ import java.sql.Timestamp;
 public class Product {
 	private int id;
 	private String name;
-	private String subtitle;
-	private float orignalprice;
-	private float promoteprice;
+	private String subTitle;
+	private float originalPrice;
+	private float promotePrice;
 	private int stock;
 	private int cid;
 	private Timestamp createDate;
+	private int pic;
+	public int getPic() {
+		return pic;
+	}
+	public void setPic(int pic) {
+		this.pic = pic;
+	}
 	public int getId() {
 		return id;
 	}
@@ -23,23 +30,23 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getSubtitle() {
-		return subtitle;
+	public String getSubTitle() {
+		return subTitle;
 	}
-	public void setSubtitle(String subtitle) {
-		this.subtitle = subtitle;
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
 	}
-	public float getOrignalprice() {
-		return orignalprice;
+	public float getOriginalPrice() {
+		return originalPrice;
 	}
-	public void setOrignalprice(float orignalprice) {
-		this.orignalprice = orignalprice;
+	public void setOriginalPrice(float originalPrice) {
+		this.originalPrice = originalPrice;
 	}
-	public float getPromoteprice() {
-		return promoteprice;
+	public float getPromotePrice() {
+		return promotePrice;
 	}
-	public void setPromoteprice(float promoteprice) {
-		this.promoteprice = promoteprice;
+	public void setPromotePrice(float promotePrice) {
+		this.promotePrice = promotePrice;
 	}
 	public int getStock() {
 		return stock;
@@ -61,9 +68,9 @@ public class Product {
 	}
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", subtitle=" + subtitle + ", orignalprice=" + orignalprice
-				+ ", promoteprice=" + promoteprice + ", stock=" + stock + ", cid=" + cid + ", createDate=" + createDate
-				+ "]";
+		return "Product [id=" + id + ", name=" + name + ", subTitle=" + subTitle + ", originalPrice=" + originalPrice
+				+ ", promotePrice=" + promotePrice + ", stock=" + stock + ", cid=" + cid + ", createDate=" + createDate
+				+ ", pic=" + pic + "]";
 	}
 	
 }

@@ -42,4 +42,12 @@ public interface BaseService<T> {
 	 * @return
 	 */
 	public int getTotals(Class<?> cls);
+	/**
+	 * 查询所有记录
+	 * @param cls
+	 * @param currentPage
+	 * @param pageSize
+	 * @return
+	 */
+	public List<T> queryAll(Class<?> cls);
 }

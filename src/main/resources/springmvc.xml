@@ -21,6 +21,7 @@
 		<mvc:default-servlet-handler/>
 		<!-- 使用注解 -->
 		<mvc:annotation-driven/>
+		
 		<!-- 配置资源视图解释器 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
 	        <!-- 前缀 -->

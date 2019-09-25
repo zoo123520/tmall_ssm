@@ -16,5 +16,9 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 	public int queryMaxId() {
 		return categoryDao.queryMaxId();
 	}
+	@Override
+	public Category queryByPid(String id) {
+		return categoryDao.queryByPid(id);
+	}
 
 }

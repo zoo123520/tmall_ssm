@@ -40,7 +40,7 @@
 						<td><input  id="name" name="name" value="${c.name}" type="text" class="form-control"></td>
 					</tr>
 					<tr>
-						<td>分类圖片(不用改)</td>
+						<td>分类圖片(维护中)</td>
 					</tr>
 					<tr class="submitTR">
 						<td colspan="2" align="center">

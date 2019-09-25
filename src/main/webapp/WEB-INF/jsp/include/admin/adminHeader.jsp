@@ -58,7 +58,17 @@ function checkInt(id, name){
 }
 function deleteById(sp,id){
 	if(confirm("确认要删除编号为"+id+"记录吗?")){
-		location.href = "../admin_category_delete/"+sp+"/"+id;
+		location.href = "${pageContext.request.contextPath}/admin_category_delete/"+sp+"/"+id;
+	}
+}
+function deleteByIds(sp,id){
+	if(confirm("确认要删除编号为"+id+"记录吗?")){
+		location.href = "${pageContext.request.contextPath}/admin_property_deleteById/"+sp+"/"+id;
+	}
+}
+function deleteById3(sp,id){
+	if(confirm("确认要删除编号为"+id+"记录吗?")){
+		location.href = "${pageContext.request.contextPath}/admin_product_deleteById/"+sp+"/"+id;
 	}
 }
 

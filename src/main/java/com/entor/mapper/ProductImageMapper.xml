@@ -2,5 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ProductImage">
-
+	<!-- 查找操作 -->
+	<select id="queryAllPic" parameterType="map" resultType="int">
+	select max(pi.id) from product p ,productimage pi where p.id=pi.pid and p.cid=#{cid} and p.id=#{id} and pi.type='type_single'
+	</select>
 </mapper>

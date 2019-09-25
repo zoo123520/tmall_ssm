@@ -2,5 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="PropertyValue">
-
+	<!-- 添加操作  -->
+	<insert id="add" parameterType="PropertyValue">
+	insert into propertyValue(pid,ptid,value) values(#{pid},#{ptid},#{value})
+	</insert>
+	<select id="queryAllByPid" resultType="PropertyValueVO">
+	select pt.name,pv.id,pv.value from product p,propertyValue pv,property pt where p.id = pv.pid and pv.ptid = pt.id and p.id =#{pid} order by pv.id
+	</select>
+	<update id="updateValueById" parameterType="map">
+	update propertyValue set value=#{value} where id=#{ptid}
+	</update>
 </mapper>

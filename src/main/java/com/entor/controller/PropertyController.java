@@ -50,9 +50,16 @@ public class PropertyController {
 		return "redirect:/admin_property_list?cid="+cids;
 	}
 	@RequestMapping("/admin_property_add")
-	public String add(Property property,String cids) {
+	public String add(Property property) {
 		ps.add(property);
 		System.out.println(property);
-		return "redirect:/admin_property_list?cid="+cids;
+		return "redirect:/admin_property_list?cid="+property.getCid();
+	}
+	
+	@RequestMapping("/admin_property_deleteById/{currentPage}/{id}")
+	public String deleteByIds(@PathVariable String currentPage,@PathVariable int id) {
+		ps.deleteById(Property.class, id);
+		System.out.println(id);
+		return "redirect:/admin_property_list?cid="+currentPage;
 	}
 	}

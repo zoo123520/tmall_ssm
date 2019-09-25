@@ -81,8 +81,7 @@ public class CategoryController {
 		int Maxid = cs.queryMaxId();
 		category.setName(name);
 		cs.add(category);
-		// 要改成context下的getrealpath
-		String path =  "c:\\Users\\Administrator\\eclipse-workspace\\tmall_ssm\\src\\main\\webapp\\img\\category";
+		String path =  request.getServletContext().getRealPath("/img/category");
 		if (file!=null) {
 			//文件类型
 			String contentType = ".jpg";

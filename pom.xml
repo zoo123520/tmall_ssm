@@ -9,6 +9,13 @@
   <url>http://maven.apache.org</url>
   
   <dependencies>
+	  <!-- com.alibaba/fastjson -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.47</version>
+	</dependency>
+  
   	<!-- spring web开发所需要的Jar -->
   	<dependency>
 	    <groupId>org.springframework</groupId>

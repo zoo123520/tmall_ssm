@@ -2,5 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Product">
-
+	<!-- 删除操作  -->
+	<delete id="deleteById">
+		delete from Product where id = #{id}
+	</delete>
+	<!-- 查找操作 -->
+	<select id="queryById" resultType="Product">
+	SELECT * from Product where id = #{id}
+	</select>
+	<select id="queryAllById"  resultType="Product">
+		select * from product where cid = #{id}
+	</select>
+	<!-- 查找操作 -->
+	<select id="queryAll" resultType="Product">
+	SELECT * from Product 
+	</select>
+	<!-- 更新操作  -->
+	<update id="update" parameterType="Product">
+		update product set name = #{name},subTitle = #{subTitle},originalPrice = #{originalPrice},promotePrice = #{promotePrice},stock = #{stock} where id = #{id} 
+	</update>
+	<insert id="add" parameterType="Product">
+			insert into Product(name,subTitle,originalPrice,promotePrice,stock,cid,createDate) values(#{name},#{subTitle},#{originalPrice},#{promotePrice},#{stock},#{cid},now())
+	</insert>
 </mapper>

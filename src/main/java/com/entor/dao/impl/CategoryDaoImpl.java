@@ -13,6 +13,10 @@ public class CategoryDaoImpl extends BaseDaoImpl<Category> implements CategoryDa
 	public int queryMaxId() {
 		return getSqlSession().selectOne(namespace+".queryMaxId");
 	}
+	@Override
+	public Category queryByPid(String id) {
+		return getSqlSession().selectOne(namespace+".queryByPid");
+	}
 
 
 }
